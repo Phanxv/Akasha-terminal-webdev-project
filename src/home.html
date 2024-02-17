@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akasha Terminal</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="website-banner">
+    <img id="website-logo" src="img/AKASHA_TERMINAL.png">
+  </div>
+  <div class="topnav" id="myTopnav">
+    <div class="left">
+      <a href="/home.html" class="active">Home</a>
+      <a href="/knowledge.html">Knowledge</a>
+      <a href="/about.html">About</a>
+    </div>
+    <div class="right">
+      <a href="/register.html">Sign up</a>
+      <a href="/login.html">Login</a>
+    </div>
+    
+    <a href="javascript:void(0);" class="icon" onclick="showNav()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+    <div class="container red-bg" >
+      <div><img class="image" src="https://static.tvtropes.org/pmwiki/pub/images/emblem_sumeru.png"
+          alt="image of website logo"></div>
+      <div class="text red-white-paragraph">
+        <h2>Welcome to Akasha Terminal, Gateway to Infinite Knowledge</h2>
+        <p>
+        Embark on a journey of intellectual exploration with Akasha Terminal, where the pursuit of knowledge knows no
+        bounds. This platform is designed to be your virtual space for collaborative learning and insightful sharing.
+        Whether you're an expert in a specific field, a lifelong learner hungry for new information, or someone looking
+        to engage in meaningful conversations, you've found the digital gateway to people's virtual Akademiya.<br><br>
+        Because knowledge from everyone is wisdom to everyone.
+        </p>
+        <br>
+        <button class="button join-now" onclick="location.href='/register.html'">Join the Akasha</button>
+      </div>
+    </div>
+    <div class="container black-bg">
+      <div class="text black-white-paragraph">
+        <h2>The goal of Akasha Terminal</h2>
+        <ul>
+          <li>
+            <b>Knowledge Hubs:</b> Give everyone a platform to share the knowledge and wisdom that they have gained through
+            their own experience or interesting information that they found on their wisdom seeking journey
+          </li>
+          <li>
+            <b>Resource Library:</b> Access an extensive repository of articles, document, and curated content covering a wide
+            range of subjects for easy and convenient learning
+          </li>
+          <li>
+            <b>Global Community:</b> Create opportunity for everyone to seek out and share information from a global community
+            of wisdom seeker and and knowledge distributor from anywhere at anytime
+          </li>
+          <li>
+            <b>Empowering Minds:</b> Create an environment where knowledge is freely shared, empowering individuals to expand
+            their understanding and expertise.
+          </li>
+          <li>
+            <b>Igniting Curiosity:</b> Inspire a passion for lifelong learning, sparking curiosity that drives continuous
+            personal and professional growth.
+          </li>
+        </ul>
+        <br>
+      </div>
+      <div><img class="image black-bg" style="max-width: 350px; padding: 10px;" src="https://media.tenor.com/ufzmpCDmzLMAAAAi/capcom-marvel.gif"
+          alt="gif of spinning globe"></div>
+    </div>
+    <div class="container red-bg">
+      <div><img class="image" style="padding-top: 10px;"
+          src="https://64.media.tumblr.com/d5d6065633be5a09edc4625397fb9389/4f20f6e8afc201d0-97/s540x810/7f4fcd1c29ed07daee3667479128161418dc566e.gif"
+          alt="gif of Irminsul tree in Genshin Impact"></div>
+      <div class="text red-white-paragraph">
+        <h2>The inspiration of Akasha Terminal</h2>
+        <p>
+        The name and concept of Akasha Terminal got the inspiration from Akasha System from the video game Genshin
+        impact. <br>In game the Akasha System allows for the transfer and sharing of information via a device called the
+        Akasha Terminal
+        Every information that every existed is stored within an Irminsul tree which is where the logo of this website
+        comes from
+        <br><br>
+        The Akasha System may draw inspiration from the Akashic records, a collection of "memories" of every thought,
+        feeling and event since the beginning of time. The records are imprinted on the akasha (aether), and are said to
+        be accessible to select individuals.
+        </p>
+        <br>
+        <button class="button join-now" onclick="location.href='https://genshin-impact.fandom.com/wiki/Akasha_System'">More about Akasha System</button>
+      </div>
+    </div>
+  </main>
+  <script>
+    function showNav() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+</body>
+
+</html>
