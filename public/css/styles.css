@@ -15,11 +15,12 @@ main {
 }
 
 .website-banner {
-  min-width: auto;
-  min-height: 50px;
-  max-width: auto;
-  max-height: 100px;
-  display: block;
+  display: flex;
+}
+
+#website-logo {
+  max-width: 50%;
+  max-height: auto;
 }
 
 .topnav {
@@ -63,6 +64,7 @@ main {
 
 .container {
   display: flex;
+  margin-left: 4.5%; margin-right: 4.5%;
   padding: 10px;
 }
 
@@ -75,6 +77,8 @@ main {
 
 .text {
   flex: 1;
+  margin: 0px;
+  padding: 20px;
   font-size: 20px;
 }
 
@@ -104,21 +108,17 @@ main {
   }
   .container {
     flex-direction: column; 
+    margin-left: 0%; margin-right: 0%;
     text-align: center; 
   }
   .image {
+    max-width: 50%;
     margin-bottom: 10px; 
   }
 }
 
-.paragraph {
-  margin: 10px;
-  padding: 20px;
-  font-size: 20px;
-}
-
 .red-white-paragraph {
-  background-color: #68020f;
+  background-color: rgba(104, 2, 15,1.0);
   color: #fffffe;
 }
 
@@ -128,7 +128,7 @@ main {
 }
 
 .red-bg {
-  background-color: #68020f;
+  background-color: rgba(104, 2, 15,1.0);
 }
 
 .black-bg {
@@ -150,3 +150,17 @@ main {
 
 .join-now { border-radius: 12px; }
 .join-now:hover {background-color: #aa210f;}
+
+#link-anchor {
+  text-decoration: none;
+  color: #fffffe;
+}
+
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(255,200,200,0.6), rgba(255,200,200,0.6)),url('../img/Irminsul.webp');
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}

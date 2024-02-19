@@ -2,9 +2,9 @@
   "name": "akasha-terminal-project",
   "version": "1.0.0",
   "description": "Website for compiling and sharing wisdom and knowledge",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Phankawee Chulakasian",

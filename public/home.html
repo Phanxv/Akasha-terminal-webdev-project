@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akasha Terminal</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="website-banner">
+    <img id="website-logo" src="img/AKASHA_TERMINAL.png">
+  </div>
+  <div class="topnav" id="myTopnav">
+    <div class="left">
+      <a href="/home" class="active">Home</a>
+      <a href="/about">About</a>
+      <a href="/knowledge">Knowledge</a>
+    </div>
+    <div class="right">
+      <a href="/register">Sign up</a>
+      <a href="/login">Login</a>
+    </div>
+
+    <a href="javascript:void(0);" class="icon" onclick="showNav()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <section class="header">
+
+  </section>
+  <script>
+    function showNav() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+</body>
+
+</html>
