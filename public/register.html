@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="./css/sign-in-up-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="./angular.min.1.6.9.js"></script>
+  <script src="./register-scripts.js"></script>
 </head>
-<body>
-    <p>REGISTER PAGE - UNDERCONSTRUCTION</p>
+<body ng-app="myApp">
+  <div class="topnav" id="myTopnav">
+    <div class="left">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/knowledge">Knowledge</a>
+    </div>
+    <div class="right">
+      <a href="/register" class="active">Sign up</a>
+      <a href="/login">Login</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="showNav()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <div class="container">
+    <input type="checkbox" id="check">
+    <div class="registration form">
+      <header>Signup</header>
+      <form name="registerForm" action="/register" method="post">
+        <input type="text" id="username" name="username" ng-model="username" placeholder="Enter your username" required username-check>
+        <span ng-show="registerForm.username.$invalid" style="color:red;">Required.</span>
+        <input type="password" id="pass" name="pass" ng-model="pass" placeholder="Create a password" required pass-check>
+        <span ng-show="registerForm.pass.$invalid" style="color:red;">Required >8 character.</span>
+        <input type="password" id="repass" name="repass" ng-model="repass" placeholder="Confirm your password" required repass-check>
+        <span ng-show="registerForm.repass.$invalid" style="color:red;">Required.</span>
+        <input type="button" class="button" value="Signup" ng-show="registerForm.username.$valid && registerForm.pass.$valid && registerForm.repass.$valid">
+      </form>
+      <div class="signup">
+        <span class="signup">Already have an account?
+         <label for="check">Login</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <script>
+    function showNav() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
 </body>
 </html>
