@@ -3,7 +3,7 @@ const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "Delta_006",
-  database:"classicmodels",
+  database:"akasha",
   multipleStatements: true
 });
 connection.connect(function(err){

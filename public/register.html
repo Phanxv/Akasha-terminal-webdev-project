@@ -9,7 +9,7 @@
   <script src="./angular.min.1.6.9.js"></script>
   <script src="./register-scripts.js"></script>
 </head>
-<body ng-app="myApp">
+<body ng-app="myApp" class="bg-1">
   <div class="topnav" id="myTopnav">
     <div class="left">
       <a href="/">Home</a>
@@ -35,7 +35,7 @@
         <span ng-show="registerForm.pass.$invalid" style="color:red;">Required >8 character.</span>
         <input type="password" id="repass" name="repass" ng-model="repass" placeholder="Confirm your password" required repass-check>
         <span ng-show="registerForm.repass.$invalid" style="color:red;">Required.</span>
-        <input type="button" class="button" value="Signup" ng-show="registerForm.username.$valid && registerForm.pass.$valid && registerForm.repass.$valid">
+        <input type="submit" class="button" value="Submit" ng-show="registerForm.username.$valid && registerForm.pass.$valid && registerForm.repass.$valid">
       </form>
       <div class="signup">
         <span class="signup">Already have an account?

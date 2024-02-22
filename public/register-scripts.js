@@ -39,8 +39,8 @@ app.directive('repassCheck', function () {
         require: 'ngModel',
         link: function (scope, element, attr, mCtrl) {
             function myValidation(value) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                if (value.length >= 8) {
+                var v = document.getElementById("pass").value;                                                                                                                                                                                                                                                                                                                                                                                                                                      
+                if (value.localeCompare(v) == 0 ) {
                     mCtrl.$setValidity('charE', true);
                 } else {
                     mCtrl.$setValidity('charE', false);
