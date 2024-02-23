@@ -27,7 +27,7 @@
   <div class="container">
     <input type="checkbox" id="check">
     <div class="registration form">
-      <header>Signup</header>
+      <header>Sign up</header>
       <form name="registerForm" action="/register" method="post">
         <input type="text" id="username" name="username" ng-model="username" placeholder="Enter your username" required username-check>
         <span ng-show="registerForm.username.$invalid" style="color:red;">Required.</span>
@@ -35,11 +35,11 @@
         <span ng-show="registerForm.pass.$invalid" style="color:red;">Required >8 character.</span>
         <input type="password" id="repass" name="repass" ng-model="repass" placeholder="Confirm your password" required repass-check>
         <span ng-show="registerForm.repass.$invalid" style="color:red;">Required.</span>
-        <input type="submit" class="button" value="Submit" ng-show="registerForm.username.$valid && registerForm.pass.$valid && registerForm.repass.$valid">
+        <input type="submit" class="button" value="Sign up" ng-show="registerForm.username.$valid && registerForm.pass.$valid && registerForm.repass.$valid">
       </form>
       <div class="signup">
         <span class="signup">Already have an account?
-         <label for="check">Login</label>
+         <a href="/login" for="check">Login</a>
         </span>
       </div>
     </div>

@@ -120,21 +120,16 @@ main {
 }
 
 .red-white-paragraph {
-  background-color: rgba(104, 2, 15,1.0);
+  background-color: rgba(104, 2, 15, 0.0);
   color: #fffffe;
 }
 
 .black-white-paragraph {
-  background-color: #030303;
   color: #fffffe;
 }
 
 .red-bg {
-  background-color: rgba(104, 2, 15,1.0);
-}
-
-.black-bg {
-  background-color: #030303;
+  background-color: rgba(0, 0, 0,0.7);
 }
 
 .button {

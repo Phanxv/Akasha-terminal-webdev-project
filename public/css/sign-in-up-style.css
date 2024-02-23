@@ -142,11 +142,13 @@ body {
 .signup{
   font-size: 17px;
   text-align: center;
+  margin-top: 10px;
 }
-.signup label{
+.signup a{
+  font-size: large;
   color: #aa210f;
   cursor: pointer;
 }
-.signup label:hover{
+.signup a:hover{  
   text-decoration: underline;
 }
