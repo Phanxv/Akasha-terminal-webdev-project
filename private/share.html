@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+</head>
+
+<body ng-app="myApp" class="bg-1">
+    <div class="topnav" id="myTopnav">
+        <div class="left">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/knowledge">Knowledge</a>
+        </div>
+        <div class="right">
+            <a href="/register">Sign up</a>
+            <a href="/login" class="active">Login</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="showNav()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="container2">
+        <input type="checkbox" id="check">
+        <div class="registration form">
+            <header>Share your knowledge</header>
+            <form name="shareForm" method="post" action="/upload" enctype="multipart/form-data">
+                <span ng-show="shareForm.title.$invalid" style="color:red;">Required.</span>
+                <input type="text" id="title" name="title" ng-model="title" placeholder="Enter title" required title-check>
+                <span ng-show="shareForm.contents.$invalid" style="color:red;">Required.</span>
+                <textarea maxlength="1023" id="contents" name="contents" ng-model="contents"placeholder="Enter contents" required contents-check></textarea>
+                <input type="file" name="attachment">
+                <input type="submit" value="Share" class="button" ng-show="shareForm.title.$valid && shareForm.contents.$valid">
+            </form>
+        </div>
+    </div>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.directive('titleCheck', function () {
+            return {
+                require: 'ngModel',
+                link: function (scope, element, attr, mCtrl) {
+                    function myValidation(value) {
+                        if (value.length > 0) {
+                            mCtrl.$setValidity('charE', true);
+                        } else {
+                            mCtrl.$setValidity('charE', false);
+                        }
+                        return value;
+                    }
+                    mCtrl.$parsers.push(myValidation);
+                }
+            };
+        });
+
+        app.directive('contentsCheck', function () {
+            return {
+                require: 'ngModel',
+                link: function (scope, element, attr, mCtrl) {
+                    function myValidation(value) {
+                        if (value.length > 0) {
+                            mCtrl.$setValidity('charE', true);
+                        } else {
+                            mCtrl.$setValidity('charE', false);
+                        }
+                        return value;
+                    }
+                    mCtrl.$parsers.push(myValidation);
+                }
+            };
+        });
+
+        function showNav() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</body>
+
+</html>

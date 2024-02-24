@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akasha Terminal</title>
+  <link rel="stylesheet" href="/knowledge/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+  <div class="website-banner">
+    <img id="website-logo" src="img/AKASHA_TERMINAL.png">
+  </div>
+  <div class="topnav" id="myTopnav">
+    <div class="left">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/knowledge" class="active">Knowledge</a>
+    </div>
+    <div class="right">
+      <a href="/register">Sign up</a>
+      <a href="/login">Login</a>
+    </div>
+
+    <a href="javascript:void(0);" class="icon" onclick="showNav()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <section class="header" style="color: #fffff0; font-weight: bolder;">
+    <div class="container red-bg" ng-controller="myCtrl">
+      <div class="text red-white-paragraph">
+        <h2 style="text-align: center;">Ready to share knowledge?</h2>
+        <div style="text-align: center;">
+          <button style="margin: 10px;" class="button join-now" onclick="location.href='/knowledge/share'">Share your
+            knowledge</button>
+        </div>
+        <h2 style="text-align: center;">Discover knowledge</h2>
+        <div style="text-align: center;">
+          <button style="margin: 10px;" class="button join-now" ng-click="listView()">Fetch knowledge</button>
+        </div>
+        <div ng-repeat=" k in knowledge" style="margin: 2.5% 10% 2.5% 10%; border: 1px solid white; padding: 20px;">
+          <h2 style="padding-left: 2.5%;">Title : {{k.postTitle}}</h2>
+          <br>
+          <p style="padding-left: 5%; padding-right: 2.5%;">Content : {{k.postContent}}</p>
+          <br>
+          <a href="../storage/{{k.postAttachment}}" style="padding-left: 5%; color: white;"
+            ng-show="k.postAttachment != null">
+            Attachment : {{k.postAttachment}}
+            <br>
+          </a>
+          <p style="padding-left: 5%;">Posted by : {{k.userName}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    var clientesApp = angular.module('myApp', []);
+
+    clientesApp.controller('myCtrl', function ($scope, $http) {
+      $scope.listView = function () {
+        $http.get('/fetch').then(function (data) {
+          $scope.knowledge = data.data;
+        });
+      };
+    });
+    function showNav() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+</body>
+
+</html>
