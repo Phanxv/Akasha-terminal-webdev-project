@@ -39,7 +39,14 @@
         </div>
         <h2 style="text-align: center;">Discover knowledge</h2>
         <div style="text-align: center;">
-          <button style="margin: 10px;" class="button join-now" ng-click="listView()">Fetch knowledge</button>
+          <button style="margin: 10px;" class="button join-now" ng-click="listView()">Fetch All</button>
+          <div class="search" style="width: 30%; left: 35%; margin-top: 20px;">
+            <input type="text" class="searchTerm" id="searchTerm" name="searchTerm" ng-model="searchTerm"
+              placeholder="What are you looking for?">
+            <button type="submit" class="searchButton" ng-click="listSearch()">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
         </div>
         <div ng-repeat=" k in knowledge" style="margin: 2.5% 10% 2.5% 10%; border: 1px solid white; padding: 20px;">
           <h2 style="padding-left: 2.5%;">Title : {{k.postTitle}}</h2>
@@ -51,7 +58,7 @@
             Attachment : {{k.postAttachment}}
             <br>
           </a>
-          <p style="padding-left: 5%;">Posted by : {{k.userName}}</p>
+          <p style="padding-left: 5%; padding-top: 20px;">Posted by : {{k.userName}}</p>
         </div>
       </div>
     </div>
@@ -65,7 +72,13 @@
           $scope.knowledge = data.data;
         });
       };
+      $scope.listSearch = function () {
+        $http.post('/fetchSearch', {term : $scope.searchTerm}).then(function (data) {
+          $scope.knowledge = data.data;
+        });
+      };
     });
+
     function showNav() {
       var x = document.getElementById("myTopnav");
       if (x.className === "topnav") {

@@ -117,6 +117,27 @@ postRouter.get('/fetch', (req, res) => {
   });
 });
 
+postRouter.post('/fetchSearch', (req, res) => {
+  let term = req.body.term;
+  let sql = `SELECT posts.postId, posts.postTitle, posts.postContent, posts.postAttachment,
+             users.userName FROM posts INNER JOIN users ON posts.userId = users.userId
+             WHERE posts.postTitle LIKE '%${term}%'
+             ORDER BY posts.postId DESC;`
+  db.query(sql, (err, result) => {
+    if (err) {
+      console.log(err);
+      notifier.notify({
+        title: "Fetch Status",
+        message: "Unsuccessful : internal server error",
+      });
+      return res.status(500);
+    } else {
+      console.log(result);
+      res.send(result);
+    }
+  });
+});
+
 const attachmentStorage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "./storage");

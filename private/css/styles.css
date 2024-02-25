@@ -43,6 +43,45 @@ body {
   padding: 2rem;
 }
 
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid white;
+  background: rgba(0,0,0,0.1);
+  border-right: none;
+  padding: 5px;
+  height: 46px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  font-size: 17px;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: white;
+}
+
+.searchButton {
+  width: 50px;
+  height: 46px;
+  border: 3px solid white;
+  background: rgba(0,0,0,0.1);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.searchButton:hover {
+  background: #aa210f;
+}
+
 .topnav a{
   display: block;
   color: #f2f2f2;
