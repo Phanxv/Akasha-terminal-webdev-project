@@ -74,7 +74,7 @@
       };
       $scope.listSearch = function () {
         $http.post('/fetchSearch', {term : $scope.searchTerm}).then(function (data) {
-          $scope.knowledge = data.data;
+          $scope.knowledge = data.data; 
         });
       };
     });
